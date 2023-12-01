@@ -13,28 +13,17 @@ def cleaner(line:str) -> str:
         ("nine", "9")
     ]
     
-    i = 0
-    
-    while i < len(line)-1:
+    for i in range(len(line)-1):
                     
         for n in numbers:
             num_ascii = n[0]
             num_len = len(num_ascii)
             
-            within_bounds = i + num_len-1-1 <= len(line)-1
             matching = line[i : i + num_len] == num_ascii
-            
-            #print(line[i : i + num_len], n, within_bounds, matching)
-            
-            if within_bounds and matching:
-                
+                        
+            if matching:
                 line = line[0:i] + n[1] + line[i+1:]
-                
-                i+= len(n[1]) -2
-                print(line)
-                
-        i+=1
-                     
+                                     
     return line
 
 
@@ -43,11 +32,9 @@ with open("input.txt", "r") as fi:
 
 sum = 0
 
-i = 0
 for line in data:
     
     line = cleaner(line)
-    
     
     for char in line:
         if char.isdecimal():
@@ -59,14 +46,6 @@ for line in data:
             lastdigit = char
             break
 
-    add = int(firstdigit + lastdigit)
-    sum += add
-    
-    print(line)
-    print(add)
-    
-    #input()
-    i+=1
+    sum += int(firstdigit + lastdigit)
         
 print(sum)
-print(i)
