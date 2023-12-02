@@ -30,13 +30,8 @@ for line in data:
                 cubes[color] = max(cubes[color], num)
             else:
                 cubes[color] = num
-        
-    #print(sets)
-    #print(cubes)
-    #print()
     
     if cubes["red"] <= 12 and cubes["green"] <= 13 and cubes["blue"] <= 14:
-        #print(number)
         sum += number
         
 print(sum)

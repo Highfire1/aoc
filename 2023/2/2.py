@@ -3,9 +3,9 @@ with open("input.txt", "r") as fi:
 
 sum = 0
 
-for line in data:
+for game in data:
     
-    split = line.split(": ")
+    split = game.split(": ")
     number = int(split[0].split(" ")[1])
     
     sets = split[1].split("; ")
@@ -18,7 +18,7 @@ for line in data:
     
     for reveals in sets:
         
-        plays:list[str] = reveals.split(", ")
+        plays = reveals.split(", ")
         
         for play in plays:
             
@@ -26,26 +26,12 @@ for line in data:
             num = int(split[0])
             color = split[1]
                         
-            if color in cubes:
-                cubes[color] = max(cubes[color], num)
-            else:
-                cubes[color] = num
-        
-    #print(sets)
-    print(cubes)
-    #print()
+            cubes[color] = max(cubes[color], num)
     
     mult = 1
     for i in cubes:
-        
-        mult = mult * cubes[i]
-        print(cubes[i])
-    
-    print(mult)   
+        mult *= cubes[i]        
     sum += mult 
-    #if cubes["red"] <= 12 and cubes["green"] <= 13 and cubes["blue"] <= 14:
-        #print(number)
-        #sum += number
         
 print(sum)
     
