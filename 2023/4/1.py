@@ -20,7 +20,7 @@ for line in data:
         if w != "":
             winners2.append(int(w))
         
-    print(ours)
+    # print(ours)
     ours2 = []
     for i, o in enumerate(ours):
         if o != "":
@@ -35,8 +35,8 @@ for line in data:
                 winnings *= 2
     
         
-    print(winnings)
-    print()
+    # print(winnings)
+    # print()
     sum += winnings
     
 print(sum)
