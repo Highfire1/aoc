@@ -25,7 +25,4 @@ for i, line in enumerate(data):
         cards[i + n + 1] += cards[i]    
 
 
-sum = 0
-for i in cards:
-    sum += i
-print(sum)
+print(sum(cards))
