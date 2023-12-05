@@ -214,7 +214,7 @@ for s in seeds:
             newshards = seedshards
             
         print("newshards:", newshards)
-        input()
+        # input()
             
         seedshards = newshards
         newshards = []
