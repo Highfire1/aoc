@@ -10,11 +10,8 @@ for i, line in enumerate(data):
     ss = line.split(": ")
     nums = ss[1].split(" | ")
     
-    winners = nums[0].split(" ")
-    ours = nums[1].split(" ")
-    
-    winners = list(filter(None, winners))
-    ours = list(filter(None, ours))
+    winners = [x for x in nums[0].split() if x.strip()]
+    ours = [x for x in nums[1].split() if x.strip()]
 
     gamewins = 0
     for n in ours:
