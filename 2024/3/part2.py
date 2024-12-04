@@ -56,11 +56,12 @@ for func in f:
     if func == "do()":
         do = True
     
-    elif func.startswith("mul"):
-        if not do:
-            pass
+    elif func == "don't()":
+        do = False
+    
+    elif func.startswith("mul") and do:
         
-        elif "," not in func_data:
+        if "," not in func_data:
             pass
             
         else:
@@ -75,15 +76,6 @@ for func in f:
                 if do:
                     result += (int(split[0]) * int(split[1]))
                 # print(result, int(split[0]) * int(split[1]))
-    
-    elif func == "don't()":
-        do = False
-    
-    else:
-        # doesn't trip
-        print("unrecognized??", func)
-        input()
-    
       
 print()  
 print(result)
